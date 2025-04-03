@@ -1,3 +1,4 @@
+#this file is used to get the routes for the ncaa website that bring you to page with athletic website of school
 import requests
 import sqlite3
 from bs4 import BeautifulSoup
