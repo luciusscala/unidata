@@ -20,15 +20,15 @@ cursor = conn.cursor()
 
 # Create table with only domain and website
 cursor.execute('''
-CREATE TABLE IF NOT EXISTS universities (
+CREATE TABLE IF NOT EXISTS new (
     website TEXT,
     domain TEXT
 )
 ''')
 
 
-
-for i in range(0,100):
+count = 0
+for i in range(0,5000):
     url = 'https://web3.ncaa.org/directory/orgDetail?id='+str(i)
     response = requests.get(url)
 
@@ -52,9 +52,11 @@ for i in range(0,100):
 
     if main_domain and athletics_domain:
         cursor.execute('''
-            INSERT INTO universities (website, domain)
+            INSERT INTO new (website, domain)
             VALUES (?, ?)
         ''', (athletics_domain, main_domain))
+        count+=1
+        print(count)
 
 
 # Commit changes to the database
