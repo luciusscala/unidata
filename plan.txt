@@ -1,3 +1,5 @@
 addd simple api to integrate database verification with like auth0 or something
 sends data to api and to auth0
 must pass both authentications to be register
+
+oozOStsEZWGLOHkQ
